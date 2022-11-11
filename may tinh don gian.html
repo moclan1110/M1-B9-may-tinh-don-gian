@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính đơn giản</title>
+    <style>
+        td {
+            text-align: center;
+            color: blue;
+        }
+        button {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<!--    <table border="1">-->
+<!--      <tr>-->
+<!--          <td colspan="4"><p id="result" style="text-align: right"></p></td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--          <td><button id="1" value="1" onclick="xuLyduLieu('1')">1</button></td>-->
+<!--          <td><button id="2" value="2" onclick="xuLyduLieu('2')">2</button></td>-->
+<!--          <td><button id="3" value="3" onclick="xuLyduLieu('3')">3</button></td>-->
+<!--          <td><button id="+" value="+" onclick="xuLyduLieu('+')">+</button></td>-->
+<!--      </tr>-->
+<!--        <tr>-->
+<!--            <td><button id="4" value="4" onclick="xuLyduLieu('4')">4</button></td>-->
+<!--            <td><button id="5" value="5" onclick="xuLyduLieu('5')">5</button></td>-->
+<!--            <td><button id="6" value="6" onclick="xuLyduLieu('6')">6</button></td>-->
+<!--            <td><button id="-" value="-" onclick="xuLyduLieu('-')">-</button></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><button id="7" value="7" onclick="xuLyduLieu('7')">7</button></td>-->
+<!--            <td><button id="8" value="8" onclick="xuLyduLieu('8')">8</button></td>-->
+<!--            <td><button id="9" value="9" onclick="xuLyduLieu('9')">9</button></td>-->
+<!--            <td><button id="*" value="*" onclick="xuLyduLieu('*')">*</button></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><button id="C" value="C" onclick="xoa()">C</button></td>-->
+<!--            <td><button id="0" value="0" onclick="xuLyduLieu('0')">0</button></td>-->
+<!--            <td><button id="=" value="=" onclick="xuLyketQua('=')">=</button></td>-->
+<!--            <td><button id="/" value="/" onclick="xuLyduLieu('/')">/</button></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--    <script src="main.js"></script>-->
+
+
+
+<table border="1">
+    <tr>
+        <td colspan="4"><p id="result" style="text-align: right;height: 15px"></p></td>
+    </tr>
+    <tr>
+        <td><button id="1" value="1" onclick="xuLyDuLieu('1')">1</button></td>
+        <td><button id="2" value="2" onclick="xuLyDuLieu('2')">2</button></td>
+        <td><button id="3" value="3" onclick="xuLyDuLieu('3')">3</button></td>
+        <td><button id="+" value="+" onclick="xuLyDuLieu('+')">+</button></td>
+    </tr>
+    <tr>
+        <td><button id="4" value="4" onclick="xuLyDuLieu('4')">4</button></td>
+        <td><button id="5" value="5" onclick="xuLyDuLieu('5')">5</button></td>
+        <td><button id="6" value="6" onclick="xuLyDuLieu('6')">6</button></td>
+        <td><button id="-" value="-" onclick="xuLyDuLieu('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button id="7" value="7" onclick="xuLyDuLieu('7')">7</button></td>
+        <td><button id="8" value="8" onclick="xuLyDuLieu('8')">8</button></td>
+        <td><button id="9" value="9" onclick="xuLyDuLieu('9')">9</button></td>
+        <td><button id="*" value="*" onclick="xuLyDuLieu('*')">*</button></td>
+    </tr>
+    <tr>
+        <td><button id="C" value="C" onclick="xoa()">C</button></td>
+        <td><button id="0" value="0" onclick="xuLyDuLieu('0')">0</button></td>
+        <td><button id="=" value="=" onclick="xuLyKetQua()">=</button></td>
+        <td><button id="/" value="/" onclick="xuLyDuLieu('/')">/</button></td>
+    </tr>
+</table>
+<script>
+    let result = '';
+    function xuLyDuLieu(button) {
+        let a = document.getElementById(button).value;
+        result += a;
+        document.getElementById('result').innerHTML = result;
+    }
+    function xuLyKetQua() {
+        let ketQua = eval(result);
+        document.getElementById('result').innerHTML = ketQua;
+    }
+    function xoa() {
+        document.getElementById('result').innerHTML = '0';
+        result = '';
+    }
+</script>
+</body>
+</html>
